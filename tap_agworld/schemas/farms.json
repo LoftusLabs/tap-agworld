@@ -1,0 +1,248 @@
+{
+    "properties": {
+        "id": {
+            "description": "The unique identifier for the farm.",
+            "type": [
+                "string"
+            ]
+        },
+        "type": {
+            "description": "The resource type, should be 'farms'.",
+            "type": [
+                "string"
+            ]
+        },
+        "updated_at": {
+            "description": "The datetime when the company was last updated.",
+            "format": "date-time",
+            "type": [
+                "string"
+            ]
+        },
+        "links": {
+            "description": "Links related to the farm resource.",
+            "type": [
+                "object"
+            ],
+            "properties": {
+                "self": {
+                    "description": "A link to the farm resource itself.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "self"
+            ]
+        },
+        "attributes": {
+            "description": "Attributes of the farm.",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "company_id": {
+                    "description": "The identifier of the company this farm belongs to.",
+                    "type": [
+                        "integer"
+                    ]
+                },
+                "created_at": {
+                    "description": "The datetime when the farm record was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A description of the farm.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "location": {
+                    "description": "The physical location details of the farm.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "number": {
+                            "description": "Street number.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "street": {
+                            "description": "Street name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "suburb": {
+                            "description": "Suburb or district.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "city": {
+                            "description": "City name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "county": {
+                            "description": "County name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "state": {
+                            "description": "State or province.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "postcode": {
+                            "description": "Postal code.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "country": {
+                            "description": "Country name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "latitude": {
+                            "description": "Latitude coordinate.",
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "longitude": {
+                            "description": "Longitude coordinate.",
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        }
+                    }
+                },
+                "name": {
+                    "description": "The name given to the farm.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reporting_region": {
+                    "description": "A designated region for reporting purposes.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "updated_at": {
+                    "description": "The datetime when the farm record was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "relationships": {
+            "description": "Relationships to other resources.",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "company": {
+                    "description": "Relationship link definition for the associated company.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the company relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related company resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                },
+                "fields": {
+                    "description": "Relationship link definition for the fields associated with this farm.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the fields relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related fields resource collection.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,398 @@
+{
+    "properties": {
+        "id": {
+            "description": "The unique identifier for the company.",
+            "type": [
+                "string"
+            ]
+        },
+        "type": {
+            "description": "The resource type, should be 'companies'.",
+            "type": [
+                "string"
+            ]
+        },
+        "updated_at": {
+            "description": "The datetime when the company was last updated.",
+            "format": "date-time",
+            "type": [
+                "string"
+            ]
+        },
+        "links": {
+            "description": "Links related to the company resource.",
+            "type": [
+                "object"
+            ],
+            "properties": {
+                "self": {
+                    "description": "A link to the company resource itself.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "self"
+            ]
+        },
+        "attributes": {
+            "description": "Attributes of the company.",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "business_identifier": {
+                    "description": "Business identifier for the company.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "business_structure": {
+                    "description": "The business structure (e.g., Company).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "company_type": {
+                    "description": "The type of company (e.g., Farmer).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contact_email": {
+                    "description": "Contact email address for the company.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "email"
+                },
+                "contact_name": {
+                    "description": "Primary contact name for the company.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_at": {
+                    "description": "The datetime when the company was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A description of the company.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "The name of the company.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "physical_location": {
+                    "description": "The physical address of the company.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "number": {
+                            "description": "Street number.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "street": {
+                            "description": "Street name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "suburb": {
+                            "description": "Suburb or district.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "city": {
+                            "description": "City name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "county": {
+                            "description": "County name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "state": {
+                            "description": "State or province.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "postcode": {
+                            "description": "Postal code.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "country": {
+                            "description": "Country name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "latitude": {
+                            "description": "Latitude coordinate.",
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "longitude": {
+                            "description": "Longitude coordinate.",
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        }
+                    }
+                },
+                "postal_location": {
+                    "description": "The postal address of the company.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "number": {
+                            "description": "Street number.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "street": {
+                            "description": "Street name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "suburb": {
+                            "description": "Suburb or district.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "city": {
+                            "description": "City name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "county": {
+                            "description": "County name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "state": {
+                            "description": "State or province.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "postcode": {
+                            "description": "Postal code.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "country": {
+                            "description": "Country name.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "latitude": {
+                            "description": "Latitude coordinate.",
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "longitude": {
+                            "description": "Longitude coordinate.",
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        }
+                    }
+                },
+                "state_name": {
+                    "description": "State name (potentially redundant with physical_location.state).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "account_number": {
+                    "description": "Account number associated with the company.",
+                    "type": [
+                        "string",
+                        "number",
+                        "null"
+                    ]
+                },
+                "updated_at": {
+                    "description": "The datetime when the company was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "relationships": {
+            "description": "Relationships to other resources.",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "activities": {
+                    "description": "Relationship link definition for activities.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the activities relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related activities resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                },
+                "farms": {
+                    "description": "Relationship link definition for farms.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the farms relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related farms resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                },
+                "seasons": {
+                    "description": "Relationship link definition for seasons.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the seasons relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related seasons resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

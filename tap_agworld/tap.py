@@ -17,19 +17,10 @@ class TapAgWorld(Tap):
     # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
         th.Property(
-            "auth_token",
-            th.StringType(nullable=False),
-            required=True,
-            secret=True,  # Flag config as protected.
-            title="Auth Token",
-            description="The token to authenticate against the API service",
-        ),
-        th.Property(
-            "project_ids",
-            th.ArrayType(th.StringType(nullable=False), nullable=False),
-            required=True,
-            title="Project IDs",
-            description="Project IDs to replicate",
+            "api_token",
+            th.StringType(),
+            required=False,
+            description="A string of the API token used by the api_token header auth ",
         ),
         th.Property(
             "start_date",
@@ -44,12 +35,29 @@ class TapAgWorld(Tap):
             description="The url for the API service",
         ),
         th.Property(
-            "user_agent",
-            th.StringType(nullable=True),
-            description=(
-                "A custom User-Agent header to send with each request. Default is "
-                "'<tap_name>/<tap_version>'"
-            ),
+            "page_size",
+            th.IntegerType,
+            required=False,
+            description="The number of records to return per page. Defaults to 10 and maximum is 100.",
+        ),
+        th.Property(
+            "records_jsonpath",
+            th.StringType,
+            required=True,
+            description="a jsonpath string representing the path in the requests "
+            "response that contains the records to process. Defaults "
+            "to `$[*]`. Stream level records_path will overwrite "
+            "the top-level records_path",
+        ),
+        th.Property(
+            "flattening_enabled",
+            th.BooleanType,
+            description="",
+        ),
+        th.Property(
+            "flattening_max_depth",
+            th.IntegerType,
+            description="",
         ),
     ).to_dict()
 
@@ -60,8 +68,13 @@ class TapAgWorld(Tap):
             A list of discovered streams.
         """
         return [
-            streams.GroupsStream(self),
-            streams.UsersStream(self),
+            streams.CompaniesStream(self),
+            streams.SeasonsStream(self),
+            streams.SeasonFieldsStream(self),
+            streams.FieldsStream(self),
+            streams.ActivitiesStream(self),
+            streams.FarmsStream(self),
+            # streams.CollectionJobsStream(self)
         ]
 
 

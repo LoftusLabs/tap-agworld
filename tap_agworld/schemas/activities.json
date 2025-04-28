@@ -1,0 +1,316 @@
+{
+    "properties": {
+        "id": {
+            "description": "The activity ID",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "updated_at": {
+            "description": "The datetime when the activity was last updated",
+            "format": "date-time",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "relationships": {
+            "description": "Relationship links for the activity",
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "links": {
+            "description": "Links related to the activity",
+            "type": [
+                "object"
+            ]
+        },
+        "attributes": {
+            "properties": {
+                "activity_category": {
+                    "description": "Category of the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "application_method": {
+                    "description": "Method used to apply the product",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "approved": {
+                    "description": "Whether the activity is approved",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "area": {
+                    "description": "Area covered by the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "author_company_id": {
+                    "description": "ID of the author's company",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "author_company_name": {
+                    "description": "Name of the author's company",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "author_user_id": {
+                    "description": "ID of the user who authored the activity",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "author_user_name": {
+                    "description": "Name of the user who authored the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "chemical_cost": {
+                    "description": "Cost of chemicals used",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "comments": {
+                    "description": "Additional comments for the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "company_id": {
+                    "description": "ID of the company performing the activity",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "company_name": {
+                    "description": "Name of the company performing the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "completed": {
+                    "description": "Whether the activity is completed",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "completed_at": {
+                    "description": "Timestamp of when the activity was completed",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cost_per_area": {
+                    "description": "Cost per area unit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_at": {
+                    "description": "Timestamp when the activity was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_on": {
+                    "description": "Platform or method used to create the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "nozzle_type": {
+                    "description": "Type of nozzle used",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "operator_company_id": {
+                    "description": "ID of the operator's company",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "operator_company_name": {
+                    "description": "Name of the operator's company",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "operation_cost": {
+                    "description": "Operation cost of the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "operator_users": {
+                    "description": "JSON array of operator users and their licenses",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_id": {
+                    "description": "ID of the parent activity",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "seed_cost": {
+                    "description": "Cost of seeds used",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specialisation": {
+                    "description": "Specialisation category",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tags": {
+                    "description": "Tags associated with the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "description": "Title of the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total_cost": {
+                    "description": "Total cost of the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total_volume": {
+                    "description": "Total volume used in the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "activity_type": {
+                    "description": "Type of the activity (e.g. RecommendedActivity)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "updated_at": {
+                    "description": "Timestamp when the activity was last updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "water_rate": {
+                    "description": "Water rate applied",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "activity_inputs": {
+                    "description": "List of inputs used in the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "activity_fields": {
+                    "description": "List of fields involved in the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "activity_problems": {
+                    "description": "List of problems (e.g. pests) associated with the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "job_activities": {
+                    "description": "Related job activities",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "job_id": {
+                    "description": "Job ID related to the activity",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "job_status": {
+                    "description": "Status of the related job",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "activity_status": {
+                    "description": "Status of the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        }
+    }
+}

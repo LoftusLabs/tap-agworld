@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import decimal
 import typing as t
+import re
 from importlib import resources
 
 from singer_sdk.authenticators import APIKeyAuthenticator
 from singer_sdk.helpers.jsonpath import extract_jsonpath
-from singer_sdk.pagination import BaseAPIPaginator  # noqa: TC002
+from singer_sdk.pagination import BaseHATEOASPaginator  # noqa: TC002
 from singer_sdk.streams import RESTStream
 
 if t.TYPE_CHECKING:
@@ -20,20 +21,21 @@ if t.TYPE_CHECKING:
 SCHEMAS_DIR = resources.files(__package__) / "schemas"
 
 
+class AgWorldPaginator(BaseHATEOASPaginator):
+    def get_next_url(self, response: requests.Response) -> str | None:
+        data = response.json()
+        return data.get("links").get("next")  # type: ignore[no-any-return]
+
+
 class AgWorldStream(RESTStream):
     """AgWorld stream class."""
-
-    # Update this value if necessary or override `parse_response`.
-    records_jsonpath = "$[*]"
-
-    # Update this value if necessary or override `get_new_paginator`.
-    next_page_token_jsonpath = "$.next_page"  # noqa: S105
 
     @property
     def url_base(self) -> str:
         """Return the API URL root, configurable via tap settings."""
         # TODO: hardcode a value here, or retrieve it from self.config
-        return "https://api.mysample.com"
+        # return "https://api.mysample.com"
+        return self.config.get("api_url", "https://us.agworld.com")
 
     @property
     def authenticator(self) -> APIKeyAuthenticator:
@@ -56,11 +58,11 @@ class AgWorldStream(RESTStream):
         Returns:
             A dictionary of HTTP headers.
         """
-        # If not using an authenticator, you may also provide inline auth headers:
-        # headers["Private-Token"] = self.config.get("auth_token")  # noqa: ERA001
-        return {}
+        headers = {}
+        headers["Api-Token"] = self.config.get("api_token")  # noqa: ERA001
+        return headers
 
-    def get_new_paginator(self) -> BaseAPIPaginator:
+    def get_new_paginator(self) -> BaseHATEOASPaginator:
         """Create a new pagination helper instance.
 
         If the source API can make use of the `next_page_token_jsonpath`
@@ -73,7 +75,7 @@ class AgWorldStream(RESTStream):
         Returns:
             A pagination helper instance.
         """
-        return super().get_new_paginator()
+        return AgWorldPaginator()
 
     def get_url_params(
         self,
@@ -90,11 +92,19 @@ class AgWorldStream(RESTStream):
             A dictionary of URL query parameters.
         """
         params: dict = {}
-        if next_page_token:
-            params["page"] = next_page_token
-        if self.replication_key:
-            params["sort"] = "asc"
-            params["order_by"] = self.replication_key
+        params["page[size]"] = self.config.get("page_size", 10)
+
+        starting_date = self.get_starting_timestamp(context)
+        if starting_date:
+            params["filter[updated_at]"] = starting_date.isoformat()
+            # params["sort"] = "updated_at"
+
+        if next_page_token is not None:
+            _page_number = re.search(
+                "page.*?number.*?=(\d+)", next_page_token.query
+            ).group(1)
+            params["page[number]"] = _page_number
+
         return params
 
     def prepare_request_payload(
@@ -125,9 +135,10 @@ class AgWorldStream(RESTStream):
         Yields:
             Each record from the source.
         """
+        records_jsonpath = self.config.get("records_jsonpath", "$.[*]")
         # TODO: Parse response body and return a set of records.
         yield from extract_jsonpath(
-            self.records_jsonpath,
+            records_jsonpath,
             input=response.json(parse_float=decimal.Decimal),
         )
 

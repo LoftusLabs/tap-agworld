@@ -1,0 +1,212 @@
+{
+    "properties": {
+        "id": {
+            "description": "The unique identifier for the season.",
+            "type": [
+                "string"
+            ]
+        },
+        "type": {
+            "description": "The resource type, should be 'seasons'.",
+            "type": [
+                "string"
+            ]
+        },
+        "updated_at": {
+            "description": "The datetime when the season was last updated.",
+            "format": "date-time",
+            "type": [
+                "string"
+            ]
+        },
+        "links": {
+            "description": "Links related to the season resource.",
+            "type": [
+                "object"
+            ],
+            "properties": {
+                "self": {
+                    "description": "A link to the season resource itself.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "self"
+            ]
+        },
+        "attributes": {
+            "description": "Attributes of the season.",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "approved": {
+                    "description": "Approval status or timestamp for the season. Specific type unknown from example (null).",
+                    "type": [
+                        "boolean",
+                        "string",
+                        "null"
+                    ]
+                },
+                "company_id": {
+                    "description": "The identifier of the company associated with this season.",
+                    "type": [
+                        "integer"
+                    ]
+                },
+                "created_at": {
+                    "description": "The datetime when the season was created.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "The name of the season (e.g., '2025').",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "season_end_date": {
+                    "description": "The designated end date for the season.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "season_start_date": {
+                    "description": "The designated start date for the season.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "updated_at": {
+                    "description": "The datetime when the season was last updated.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "relationships": {
+            "description": "Relationships to other resources.",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "company": {
+                    "description": "Relationship link definition for the associated company.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the company relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related company resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                },
+                "fields": {
+                    "description": "Relationship link definition for associated fields.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the fields relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related fields resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                },
+                "activities": {
+                    "description": "Relationship link definition for associated activities.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the activities relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related activities resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

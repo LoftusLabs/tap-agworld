@@ -1,0 +1,366 @@
+{
+    "properties": {
+      "id": {
+        "description": "The unique identifier for the collection job.",
+        "type": [
+          "string"
+        ]
+      },
+      "type": {
+        "description": "The resource type, should be 'collection_jobs'.",
+        "type": [
+          "string"
+        ]
+      },
+      "links": {
+        "description": "Links related to the collection job resource.",
+        "type": [
+          "object",
+          "null"
+        ],
+        "updated_at": {
+            "description": "The datetime when the activity was last updated",
+            "format": "date-time",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "properties": {
+          "self": {
+            "description": "A link to the collection job resource itself.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          }
+        },
+        "required": [
+          "self"
+        ]
+      },
+      "attributes": {
+        "description": "Attributes of the collection job.",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "assigned_company_id": {
+            "description": "ID of the company assigned to perform the collection.",
+            "type": [ "integer", "null" ]
+          },
+          "assigned_company_name": {
+            "description": "Name of the company assigned to perform the collection.",
+            "type": [ "string", "null" ]
+          },
+          "assigned_user_id": {
+            "description": "ID of the user assigned to perform the collection.",
+            "type": [ "integer", "null" ]
+          },
+          "assigned_user_name": {
+            "description": "Name of the user assigned to perform the collection.",
+            "type": [ "string", "null" ]
+          },
+          "author_company_id": {
+            "description": "ID of the company that created the collection job.",
+            "type": [ "integer", "null" ]
+          },
+          "author_company_name": {
+            "description": "Name of the company that created the collection job.",
+            "type": [ "string", "null" ]
+          },
+          "author_user_id": {
+            "description": "ID of the user who created the collection job.",
+            "type": [ "integer", "null" ]
+          },
+          "author_user_name": {
+            "description": "Name of the user who created the collection job.",
+            "type": [ "string", "null" ]
+          },
+          "auto_run_surfacing": {
+            "description": "Flag indicating if surfacing should be run automatically.",
+            "type": "boolean"
+          },
+          "comments": {
+            "description": "User comments related to the job.",
+            "type": [ "string", "null" ]
+          },
+          "company_address": {
+            "description": "Address of the authoring company.",
+            "type": [ "string", "null" ]
+          },
+          "company_email": {
+            "description": "Email of the authoring company.",
+            "type": [ "string", "null" ],
+            "format": "email"
+          },
+          "company_id": {
+            "description": "ID of the authoring company (redundant with author_company_id).",
+            "type": [ "integer", "null" ]
+          },
+          "company_name": {
+            "description": "Name of the authoring company (redundant with author_company_name).",
+            "type": [ "string", "null" ]
+          },
+          "company_phone_number": {
+            "description": "Phone number of the authoring company.",
+            "type": [ "string", "null" ]
+          },
+          "created_at": {
+            "description": "Timestamp when the collection job was created.",
+            "type": [ "string", "null" ],
+            "format": "date-time"
+          },
+          "estimated_sample_count": {
+            "description": "Estimated number of samples to be collected.",
+            "type": [ "integer", "null" ]
+          },
+          "farm_id": {
+            "description": "ID of the farm where the collection takes place.",
+            "type": [ "integer", "null" ]
+          },
+          "farm_name": {
+            "description": "Name of the farm where the collection takes place.",
+            "type": [ "string", "null" ]
+          },
+          "field_area": {
+            "description": "Area of the field, potentially including units.",
+            "type": [ "string", "null" ]
+          },
+          "field_boundary": {
+            "description": "Geographic boundary of the field (GeoJSON MultiPolygon).",
+            "type": [ "object", "null" ],
+            "properties": {
+              "type": { "const": "MultiPolygon" },
+              "coordinates": {
+                "type": "array",
+                "items": { "type": "array", "items": { "type": "array", "items": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "number" } } } }
+              }
+            },
+            "required": ["type", "coordinates"]
+          },
+          "field_id": {
+            "description": "ID of the field where the collection takes place.",
+            "type": [ "integer", "null" ]
+          },
+          "field_name": {
+            "description": "Name of the field where the collection takes place.",
+            "type": [ "string", "null" ]
+          },
+          "planned_collection_date": {
+            "description": "Timestamp when the collection is planned.",
+            "type": [ "string", "null" ],
+            "format": "date-time"
+          },
+          "sampled_at": {
+            "description": "Timestamp when the sampling was actually performed.",
+            "type": [ "string", "null" ],
+            "format": "date-time"
+          },
+          "season_id": {
+            "description": "ID of the season associated with this job.",
+            "type": [ "integer", "null" ]
+          },
+          "season_name": {
+            "description": "Name of the season associated with this job.",
+            "type": [ "string", "null" ]
+          },
+          "status": {
+            "description": "Current status of the collection job.",
+            "type": [ "string", "null" ]
+          },
+          "state_updated_at": {
+            "description": "Timestamp when the job status was last updated.",
+            "type": [ "string", "null" ],
+            "format": "date-time"
+          },
+          "strategy": {
+            "description": "Sampling strategy used (e.g., grid, zone).",
+            "type": [ "string", "null" ]
+          },
+          "updated_at": {
+            "description": "Timestamp when the job record was last updated.",
+            "type": [ "string", "null" ],
+            "format": "date-time"
+          },
+          "lab_details": {
+            "description": "Details of the laboratory handling the samples.",
+            "type": [ "object", "null" ],
+            "properties": {
+              "account_number": { "type": [ "string", "null" ] },
+              "purchase_order_number": { "type": [ "string", "null" ] },
+              "address": { "type": [ "string", "null" ] },
+              "email": { "type": [ "string", "null" ], "format": "email" },
+              "id": { "type": [ "integer", "null" ] },
+              "name": { "type": [ "string", "null" ] },
+              "phone_number": { "type": [ "string", "null" ] }
+            }
+          },
+          "requested_points": {
+            "description": "Specific points requested for sampling (details unknown from null example).",
+            "type": [ "array", "null" ],
+            "items": {}
+          },
+          "sampling_grid": {
+            "description": "Details of the sampling grid used, if applicable.",
+             "type": [ "object", "null" ],
+             "properties": {
+               "id": { "type": [ "integer", "null" ] },
+               "angle": { "type": [ "number", "null" ] },
+               "grid_size": { "description": "Size of the grid cells, may include units.", "type": [ "string", "null" ] },
+               "origin": {
+                 "description": "Origin point of the grid (GeoJSON Point).",
+                 "type": [ "object", "null" ],
+                 "properties": {
+                   "type": { "const": "Point" },
+                   "coordinates": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "number" } }
+                 },
+                  "required": ["type", "coordinates"]
+               }
+             }
+          },
+          "previous_sampled_date": {
+            "description": "Timestamp of the previous sampling event for this location.",
+            "type": [ "string", "null" ],
+            "format": "date-time"
+          },
+          "previous_samples": {
+            "description": "Locations of samples from the previous event (GeoJSON Points).",
+            "type": [ "array", "null" ],
+            "items": {
+              "type": "object",
+              "properties": {
+                 "type": { "const": "Point" },
+                 "coordinates": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "number" } }
+              },
+              "required": ["type", "coordinates"]
+            }
+          },
+          "planned_depths": {
+            "description": "Details about the planned sampling depths and associated tests/samples.",
+            "type": [ "array", "null" ],
+            "items": {
+              "type": "object",
+              "properties": {
+                "min_depth": { "description": "Minimum planned depth, includes units.", "type": [ "string", "null" ] },
+                "max_depth": { "description": "Maximum planned depth, includes units.", "type": [ "string", "null" ] },
+                "surface_this_depth": { "description": "Flag for surfacing at this depth.", "type": "boolean" },
+                "lab_test": {
+                  "description": "Lab tests requested for this depth.",
+                  "type": [ "array", "null" ],
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": { "type": [ "string", "null" ] },
+                      "description": { "type": [ "string", "null" ] },
+                      "display_name": { "type": [ "string", "null" ] },
+                      "sample_type": { "type": [ "string", "null" ] }
+                    }
+                  }
+                },
+                "samples": {
+                  "description": "Actual samples collected for this depth.",
+                   "type": [ "array", "null" ],
+                   "items": {
+                     "type": "object",
+                     "properties": {
+                        "id": { "type": [ "integer", "null" ] },
+                        "actual_min_depth": { "description": "Actual minimum depth sampled, includes units.", "type": [ "string", "null" ] },
+                        "actual_max_depth": { "description": "Actual maximum depth sampled, includes units.", "type": [ "string", "null" ] },
+                        "barcode": { "description": "Barcode associated with the sample.", "type": [ "string", "null" ] },
+                        "analysed_at": { "description": "Timestamp when the sample was analysed.", "type": [ "string", "null" ], "format": "date-time" },
+                        "created_at": { "description": "Timestamp when the sample record was created.", "type": [ "string", "null" ], "format": "date-time" },
+                        "updated_at": { "description": "Timestamp when the sample record was last updated.", "type": [ "string", "null" ], "format": "date-time" },
+                        "lab_code": { "description": "Code assigned by the lab.", "type": [ "string", "null" ] },
+                        "location": {
+                          "description": "Location where the sample was taken (GeoJSON Point).",
+                           "type": [ "object", "null" ],
+                           "properties": {
+                             "type": { "const": "Point" },
+                             "coordinates": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "number" } }
+                           },
+                           "required": ["type", "coordinates"]
+                        },
+                        "sample_type": { "type": [ "string", "null" ] },
+                        "results": {
+                          "description": "Key-value pairs of analysis results, where keys are test codes and values are results (often including units).",
+                          "type": [ "object", "null" ],
+                          "additionalProperties": {
+                             "type": "string"
+                          }
+                        }
+                     }
+                   }
+                }
+              }
+            }
+          },
+          "job_state_history": {
+            "description": "History of status changes for the collection job.",
+            "type": [ "array", "null" ],
+            "items": {
+              "type": "object",
+              "properties": {
+                "created_at": { "type": [ "string", "null" ], "format": "date-time" },
+                "old_status": { "type": [ "string", "null" ] },
+                "new_status": { "type": [ "string", "null" ] },
+                "user_id": { "type": [ "integer", "null" ] },
+                "user_name": { "type": [ "string", "null" ] }
+              }
+            }
+          },
+          "manual_upload": {
+            "description": "Flag indicating if the job data was manually uploaded.",
+            "type": "boolean"
+          }
+        }
+      },
+      "relationships": {
+        "description": "Relationships to other resources.",
+        "type": [ "object", "null" ],
+        "properties": {
+          "company": {
+            "description": "Relationship link definition for the associated company.",
+            "type": [ "object", "null" ],
+            "properties": {
+              "links": {
+                "type": [ "object", "null" ],
+                "properties": {
+                  "self": { "description": "Link to the company relationship itself.", "type": ["string", "null"], "format": "uri" },
+                  "related": { "description": "Link to the related company resource.", "type": ["string", "null"], "format": "uri" }
+                }
+              }
+            }
+          },
+          "field": {
+            "description": "Relationship link definition for the associated field.",
+            "type": [ "object", "null" ],
+            "properties": {
+              "links": {
+                "type": [ "object", "null" ],
+                "properties": {
+                  "self": { "description": "Link to the field relationship itself.", "type": ["string", "null"], "format": "uri" },
+                  "related": { "description": "Link to the related field resource.", "type": ["string", "null"], "format": "uri" }
+                }
+              }
+            }
+          },
+          "season": {
+             "description": "Relationship link definition for the associated season.",
+            "type": [ "object", "null" ],
+            "properties": {
+              "links": {
+                "type": [ "object", "null" ],
+                "properties": {
+                  "self": { "description": "Link to the season relationship itself.", "type": ["string", "null"], "format": "uri" },
+                  "related": { "description": "Link to the related season resource.", "type": ["string", "null"], "format": "uri" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
