@@ -6,6 +6,13 @@
                 "string"
             ]
         },
+        "season_id": {
+            "description": "The ID of the season associated with the company.",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "type": {
             "description": "The resource type, should be 'companies'.",
             "type": [
@@ -284,6 +291,169 @@
                         "string",
                         "null"
                     ]
+                },
+                "application_cost": {
+                    "description": "Cost of application.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "area": {
+                    "description": "Area of the field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "boundary": {
+                    "description": "Boundary of the field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "chemical_cost": {
+                    "description": "Cost of chemicals used.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contractor_cost": {
+                    "description": "Cost of contractor services.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "crops": {
+                    "description": "Crops grown in the field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cropping_method": {
+                    "description": "Method of cropping.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "farm_id": {
+                    "description": "ID of the farm associated with the field.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fertilizer_cost": {
+                    "description": "Cost of fertilizers used.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "field_group_id": {
+                    "description": "ID of the field group.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "gross_margin": {
+                    "description": "Gross margin of the field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "harvested_area": {
+                    "description": "Area harvested.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "harvested_weight": {
+                    "description": "Weight harvested.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "harvest_date": {
+                    "description": "Date of harvest.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time"
+                },
+                "irrigation": {
+                    "description": "Irrigation method used.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_cost": {
+                    "description": "Other costs associated with the field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_income": {
+                    "description": "Other income generated from the field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "plant_spacing": {
+                    "description": "Spacing between plants.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "planting_date": {
+                    "description": "Date of planting.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time"
+                },
+                "row_spacing": {
+                    "description": "Spacing between rows.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "season_id": {
+                    "description": "ID of the season associated with the field.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "seed_cost": {
+                    "description": "Cost of seeds used.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "yield_price": {
+                    "description": "Price per unit of yield.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             }
         },
@@ -328,6 +498,39 @@
                     }
                 },
                 "farms": {
+                    "description": "Relationship link definition for farms.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "links": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "self": {
+                                    "description": "Link to the farms relationship itself.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                },
+                                "related": {
+                                    "description": "Link to the related farms resource.",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                },
+                "farm": {
                     "description": "Relationship link definition for farms.",
                     "type": [
                         "object",

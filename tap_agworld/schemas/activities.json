@@ -15,6 +15,13 @@
                 "null"
             ]
         },
+        "type" : {
+            "description": "Endpoint type",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "relationships": {
             "description": "Relationship links for the activity",
             "type": [
@@ -301,6 +308,149 @@
                 },
                 "activity_status": {
                     "description": "Status of the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "band": {
+                    "description": "Band information for the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "droplet_size": {
+                    "description": "Size of droplets used in the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "due_at": {
+                    "description": "Due date for the activity",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expiration_date": {
+                    "description": "Expiration date for the activity",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "farm_assets": {
+                    "description": "Assets used in the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fertilizer_cost": {
+                    "description": "Cost of fertilizers used",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "humidity": {
+                    "description": "Humidity level during the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "operator_company_licenses": {
+                    "description": "Licenses of the operator's company",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reason_name": {
+                    "description": "Name of the reason for the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reason_text": {
+                    "description": "Text explaining the reason for the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "season_phase": {
+                    "description": "Phase of the season during which the activity occurs",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "skip_row": {
+                    "description": "Whether to skip this row in the activity list",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "started_at": {
+                    "description": "Timestamp when the activity started",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "temperature": {
+                    "description": "Temperature during the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "timing": {
+                    "description": "Timing information for the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "weather_conditions": {
+                    "description": "Weather conditions during the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wind_direction": {
+                    "description": "Direction of the wind during the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wind_speed": {
+                    "description": "Speed of the wind during the activity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "colour_id": {
+                    "description": "ID of the colour associated with the activity",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "colour_name": {
+                    "description": "Name of the colour associated with the activity",
                     "type": [
                         "string",
                         "null"
